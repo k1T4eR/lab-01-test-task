@@ -11,6 +11,7 @@ class FeedbackMailer {
         $this->_feedback = $feedback;
     }
 
+    // http://stackoverflow.com/questions/5335273/how-to-send-an-email-using-php
     public function sendNotification() {
         $to      = 'k1t4er@gmail.com';
         $subject = 'New Feedback';
