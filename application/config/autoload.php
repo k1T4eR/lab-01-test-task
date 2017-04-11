@@ -14,9 +14,10 @@ function missing_application_constant_handler($constant) {
         $target = array_pop($tokens); //
 
         // Downcase the rest: ['application', 'routing']. We are following downcase directory naming.
+        // http://stackoverflow.com/questions/13431782/what-setting-causes-case-sensitive-require-once-paths
         $tokens = array_map(function($token) { return strtolower($token); }, $tokens);
 
-        // Put target class back to tokens: ['application', 'routing', 'Route']
+        // Put targeted class back to tokens: ['application', 'routing', 'Route']
         array_push($tokens, $target);
 
         // join('/', $tokens) . '.php' => application/routing/Route.php
