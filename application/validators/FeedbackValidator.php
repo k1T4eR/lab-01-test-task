@@ -11,6 +11,7 @@ class FeedbackValidator {
         $this->_errors = [];
     }
 
+    // TODO Validate limits
     public function validate(Feedback $feedback) {
         if (!(new NameValidator())->valid($feedback->name)) {
             $this->_errors['name'] = 'Invalid name';
