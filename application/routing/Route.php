@@ -7,14 +7,14 @@ class Route {
     protected $_name;
     protected $_pattern;
     protected $_method;
-    protected $_controller;
-    protected $_action;
+    protected $_controllerClassName;
+    protected $_controllerActionName;
 
-    public function __construct($name, $pattern, $method, $controller, $action) {
-        $this->_controller = "Application\\Controllers\\$controller";
-        $this->_action = $action;
-        $this->_pattern = $pattern;
-        $this->_method = strtoupper($method);
+    public function __construct($name, $pattern, $method, $controllerClassName, $controllerActionName) {
+        $this->_controllerClassName  = "Application\\Controllers\\$controllerClassName";
+        $this->_controllerActionName = $controllerActionName;
+        $this->_pattern              = $pattern;
+        $this->_method               = strtoupper($method);
     }
 
     public function match($path) {
@@ -24,11 +24,11 @@ class Route {
     }
 
     public function getControllerClassName() {
-        return $this->_controller;
+        return $this->_controllerClassName;
     }
 
     public function getControllerActionName() {
-        return $this->_action;
+        return $this->_controllerActionName;
     }
 
     public function getMethod() {

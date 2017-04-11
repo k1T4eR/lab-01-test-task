@@ -1,32 +1,23 @@
 <?php
 
 class Application {
-    private function __construct() {
+    private $_routes;
+    private $_request;
 
+    public function getRequest() {
+        return $this->_request;
     }
 
-    public function setRoutes(array $routes) {
-
+    public function setRequest(\Application\Routing\Request $request) {
+        $this->_request = $request;
     }
 
     public function getRoutes() {
-
+        return $this->_routes;
     }
 
-    public function getRequest() {
-
-    }
-
-    public function setRequest($request) {
-
-    }
-
-    public function getResponse() {
-
-    }
-
-    public function setResponse($response) {
-
+    public function setRoutes(array $routes) {
+        $this->_routes = $routes;
     }
 
     private static $instance;
