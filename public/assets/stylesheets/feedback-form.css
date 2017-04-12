@@ -1,0 +1,92 @@
+.feedback-form {
+    border:        1px solid #CCC;
+    border-radius: 4px;
+    width:         500px;
+    margin:        100px auto 0 auto;
+    padding:       10px;
+}
+
+.feedback-form form {
+    margin: 0;
+}
+
+.feedback-form-title {
+    text-align:  center;
+    font-size:   16px;
+    font-weight: bold;
+    margin:      0 0 15px 0;
+}
+
+.feedback-form-input {
+    display:        block;
+    width:          100%;
+    font-family:    inherit;
+    font-size:      inherit;
+    line-height:    inherit;
+    border:         1px solid #CCC;
+    outline:        0;
+    border-radius:  4px;
+    padding:        8px 8px 7px 8px;
+}
+
+.feedback-form-input:focus {
+    border: 1px solid #4183d7;
+}
+
+input.feedback-form-input {
+}
+
+textarea.feedback-form-input {
+}
+
+.feedback-form-group {
+    position: relative;
+}
+
+.feedback-form-group + .feedback-form-group {
+    margin: 15px 0 0 0;
+}
+
+.feedback-form-error {
+    position:      absolute;
+    top:           -9px;
+    right:         0;
+    background:    #ba1a32;
+    color:         #FFF;
+    font-size:     12px;
+    border-radius: 2px;
+    padding:       0 2px;
+    height:        17px;
+}
+
+.feedback-form-message-title {
+    font-weight: bold;
+    font-size:   16px;
+    margin:      0 0 20px 0;
+}
+
+.feedback-form-message-text {
+
+}
+
+.feedback-form-progress {
+    font-weight: bold;
+}
+
+.feedback-form-submit {
+    -webkit-appearance: none;
+    background:         #FFF;
+    border:             1px solid #CCC;
+    border-radius:      4px;
+    font-family:        inherit;
+    line-height:        inherit;
+    font-size:          14px;
+    color:              inherit;
+    cursor:             pointer;
+    padding:            8px 8px 7px 8px;
+    outline:            0;
+}
+
+.feedback-form-submit:hover {
+    border-color: #4183d7;
+}

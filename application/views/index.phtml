@@ -1,25 +1,54 @@
-<html style="font-family: Consolas, monospace;">
+<html>
     <head>
         <title>lab01-test</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" media="all" href="/assets/vendor/normalize-css/normalize.css"/>
+        <link rel="stylesheet" media="all" href="/assets/stylesheets/base.css"/>
+        <link rel="stylesheet" media="all" href="/assets/stylesheets/feedback-form.css"/>
+        <script src="/assets/vendor/jquery/dist/jquery.js"></script>
+        <script src="/assets/javascripts/feedback-form.js"></script>
     </head>
     <body>
-        <form action="/api/feedbacks" method="POST">
-            <div>
-                <input type="text" name="name" placeholder="Name"/>
+        <div class="feedback-form js-feedback-form">
+            <h1 class="feedback-form-title">Обратная связь</h1>
+            <div class="feedback-form-view js-hide-if-feedback-form-success js-hide-if-feedback-form-failure">
+                <form action="/api/feedbacks" method="POST" novalidate>
+                    <div class="feedback-form-group">
+                        <input class="feedback-form-input" type="text" name="name" placeholder="* Ваше имя"/>
+                        <div class="js-feedback-form-error-outlet for-name"></div>
+                    </div>
+                    <div class="feedback-form-group">
+                        <input class="feedback-form-input" type="email" name="email" placeholder="* E-Mail"/>
+                        <div class="js-feedback-form-error-outlet for-email"></div>
+                    </div>
+                    <div class="feedback-form-group">
+                        <input class="feedback-form-input" type="text" name="phone" placeholder="+38 (0XX) XXX-XX-XX"/>
+                        <div class="js-feedback-form-error-outlet for-phone"></div>
+                    </div>
+                    <div class="feedback-form-group">
+                        <textarea class="feedback-form-input" name="message" placeholder="Ваше сообщение" rows="5"></textarea>
+                        <div class="js-feedback-form-error-outlet for-message"></div>
+                    </div>
+                    <div class="feedback-form-group js-hide-if-feedback-form-progress">
+                        <button type="submit" class="feedback-form-submit js-feedback-form-action-submit">Отправить</button>
+                    </div>
+                    <div class="feedback-form-group js-show-if-feedback-form-progress hide">
+                        <div class="feedback-form-progress">Идёт отправка...</div>
+                    </div>
+                </form>
             </div>
-            <div>
-                <input type="email" name="email" placeholder="E-Mail"/>
+            <div class="feedback-form-view js-show-if-feedback-form-success hide">
+                <div class="feedback-form-message">
+                    <div class="feedback-form-message-title">Спасибо!</div>
+                    <div class="feedback-form-message-text">Ваше сообщение успешно отправлено.</div>
+                </div>
             </div>
-            <div>
-                <input type="text" name="phone" placeholder="Phone"/>
+            <div class="feedback-form-view js-show-if-feedback-form-failure hide">
+                <div class="feedback-form-message">
+                    <div class="feedback-form-message-title">Произошла ошибка!</div>
+                    <div class="feedback-form-message-text">Не удалось отправить Ваше сообщение. Пожалуйста, попробуйте ещё раз.</div>
+                </div>
             </div>
-            <div>
-                <textarea name="message" placeholder="Message"></textarea>
-            </div>
-            <div>
-                <button type="submit">Submit</button>
-            </div>
-        </form>
+        </div>
     </body>
 </html>
