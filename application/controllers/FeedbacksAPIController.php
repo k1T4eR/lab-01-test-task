@@ -6,7 +6,7 @@ use Application\Mailers\FeedbackMailer;
 use Application\Models\Feedback;
 use Application\Validators\FeedbackValidator;
 
-// curl --verbose --data 'email=example@email.com&name=Иван Иванович&phone=%2B380123456789&message=Hello, world!' http://lab01-test.lo/api/feedbacks
+// curl --verbose --data 'email=example@email.com&name=Иван Иванович&phone=%2B380123456789&message=Hello, world!' http://lab01.lo/api/feedbacks
 
 class FeedbacksAPIController extends BaseController {
     public function create() {

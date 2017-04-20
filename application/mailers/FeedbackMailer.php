@@ -22,7 +22,7 @@ class FeedbackMailer {
             'Message: '.$this->_feedback->message
         ]);
         $headers = join("\r\n", [
-            'From: bot@lab01-test.lo',
+            'From: bot@lab01.lo',
             'Reply-To: k1t4er@gmail.com',
             'X-Mailer: PHP/' . phpversion()
         ]);
